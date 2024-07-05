@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container {
+    
+    max-width: 500px;
+
+    margin: 70px auto;
+    background-color: rgba(91, 132, 167, 0.805);
+    background-color: rgba(210, 219, 227, 0.805);
+    padding: 50px;
+    border-radius: 50px;
+    box-shadow: 5px 10px 20px 10px rgba(0, 0, 0, 0.5);
+}
+a {
+    text-decoration: dotted;
+    text-align: center;
+    margin: 40px;
+    display: block;
+    font-weight: bold;
+    margin-left: 10%;
+}

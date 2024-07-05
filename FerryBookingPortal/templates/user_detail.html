@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/detail.css">
+    <title>USER DETAILS</title>
+</head>
+<script>
+    // var data = window.location.search;
+    //     var params = new URLSearchParams(data);
+    //     console.log(data);
+    //     var name = params.get("name");
+    //     var email = params.get("email");
+    //     var age = params.get("age");
+    //     var phone = params.get("phone");
+    //     var address = params.get("address");
+
+    //     var getData = "name: "+name+"<br>";
+    //         getData += "email: "+email+"<br>";
+    //         getData += "age: "+age+"<br>";
+    //         getData += "phone: "+phone+"<br>";
+    //         getData += "address: "+address;
+
+    //     document.getElementById("res").innerHTML=getData;
+
+    const addbtn = document.queryselector(".add");
+
+    const input = document.queryselector(".inp-group");
+
+
+    function addInput(){
+        const name =document.createElement("input");
+        name.type="text";
+        name.placeholder= "Enter Your Name"
+
+        const age =document.createElement("input");
+        age.type="text";
+        age.placeholder= "Enter Your age"
+
+        const gender =document.createElement("input");
+        gender.type="text";
+        gender.placeholder= "Enter Your gender"
+        
+        const food =document.createElement("input");
+        food.type="text";
+        food.placeholder= "Enter Your food"
+
+        const btn =document.createElement("a");
+        btn.className="delete";
+        btn.innerHTML="&times";
+
+        const flex =document.createElement("div");
+        flex.className="flex";
+
+
+        input.appendChild(flex);
+        flex.appendChild(name);
+        flex.appendChild(name);
+        flex.appendChild(name);
+        flex.appendChild(name);
+
+
+    }
+    addBtn.addEventListener("click",addInput);
+
+    </script>
+<body>
+    <div class="container">
+    <h1>ADD YOUR DETAILS HERE</h1>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="form-group">
+    <form action="/book" method="get">
+    
+        <label for="name"></label>
+        <input type="text" id="name" name="name" placeholder="YOUR NANE" required >
+    </div>
+    <div class="form-group">
+        <!-- <label for="email">EMAIL</label> -->
+        <input type="email" id="email" name="email" placeholder="EMAIL " required>
+    </div>
+    <div class="form-group">
+        <!-- <label for="age">AGE</label> -->
+        <input type="age" id="age" name="age" placeholder="AGE " required>
+    </div>
+
+    <div class="form-group">
+        <!-- <label for=" mobile">PHONE NO. </label> -->
+        <input type="text" id="text" name="phone" placeholder="PHONE NO. " required>
+    </div>
+    <div class="form-group">
+        <!-- <label for="address">ADDRESS</label> -->
+        <input type="text" id="text" name="address" placeholder="ADDRESS " required>
+    </div>
+    <div class="form-group">
+        <!-- <label for="nationality">NATIONALITY </label> -->
+        <input type="text" id="text" name="nationality" placeholder="NATIONALITY" required>
+    </div>
+    <div class="form-group">
+        <!-- <label for="blood_group">BLOOD GROUP </label> -->
+        <select id="blood_group" name="blood_group" required>
+            <option value="">blood group</option>
+            <option value="1">A+</option>
+            <option value="2">A-</option>
+            <option value="3">B+</option>
+            <option value="1">B-</option>
+            <option value="2">O+</option>
+            <option value="3">O-</option>
+            <option value="2">AB+</option>
+            <option value="3">AB-</option>
+        </select>    </div>
+    <div class="form-group">
+        <!-- <label for="gender">GENDER</label> -->
+        <select id="gender" name="gender" required>
+            <option value="">GENDER</option>
+            <option value="1">MALE</option>
+            <option value="2">FEMALE</option>
+            <option value="3">OTHER</option>
+            
+        </select>
+    </div>
+    <div class="form-group">
+    <!-- <input type="number" id="new-member " name="new-member" min="1" placeholder=" ADD MEMBER" required> -->
+   <a href="/show" class="add">ADD PERSON &plus;</a>
+    </div>
+    <div class="inp-group">
+
+    </div>
+    <div class="btn">
+
+    <input type="submit" value="PROCED TO PAYMENT"  onclick="passvalue ();"> 
+    <!-- <input type="save" value="SAVE FOR LATER">   -->
+    <a href="/book">SAVE FOR LATER</a>
+    </div>
+</form>
+</div>
+</body>
+
+</html>
